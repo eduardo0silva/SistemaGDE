@@ -1,6 +1,15 @@
 ActionController::Routing::Routes.draw do |map|
   # The priority is based upon order of creation: first created -> highest priority.
-
+  map.resources :usuarios
+  map.resources :sessions, :only => [:new, :create, :destroy]
+  map.resources :microposts, :only => [:create, :destroy]
+  map.login '/login', :controller => 'sessions', :action => 'new'
+  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
+  map.contato '/contato', :controller => 'pages', :action => 'contato'
+  map.sobre   '/sobre',   :controller => 'pages', :action => 'sobre'
+  map.cadastro '/cadastro', :controller => 'usuarios', :action => 'new'
+  map.relatorio '/relatorio', :controller => 'pages', :action => 'relatorio'
+  
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
   # Keep in mind you can assign values other than :controller and :action
@@ -32,7 +41,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   # map.root :controller => "welcome"
-
+  map.root :controller => 'pages', :action => 'principal'
   # See how all your routes lay out with "rake routes"
 
   # Install the default routes as the lowest priority.

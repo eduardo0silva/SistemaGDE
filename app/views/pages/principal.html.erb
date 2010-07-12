@@ -1,0 +1,23 @@
+<% if usuario_logado? %>
+	<table class="frente">
+		<tr>
+			<td class="main">
+				<h2 class="micropost">Que q t&aacute; acontecendo?</h2>
+				<%= render 'pages/micropost_form'%>
+				<%= render 'pages/feed'%>
+			</td>
+			<td class="sidebar round">
+				<%= render 'pages/usuario_info' %>
+			</td>
+		</tr>
+	</table>
+<% else %>
+<h1>P&aacute;gina Principal</h1>
+<p>
+ Esta é a página principal do projeto 
+ <a href="http://www.matriculaweb.unb.br/matriculaweb/graduacao/disciplina.aspx?cod=116793" title="Intrudu&ccedil;&atilde;o &agrave; Microinform&aacute;tica">IMI</a>
+</p>
+
+<%= link_to "Cadastre-se agora!", cadastro_url, :class => "signup_button round" %>
+
+ <% end %>

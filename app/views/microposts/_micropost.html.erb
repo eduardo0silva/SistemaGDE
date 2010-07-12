@@ -1,0 +1,11 @@
+<tr>
+	<td class="gravatar"><%= gravatar_for micropost.usuario %></td>
+	<td class="micropost">
+		<span class="conteudo"> <%= h micropost.conteudo%></span>
+		<span class="tempo">Postado <%= time_ago_in_words(micropost.created_at)%> atrás.</span>
+	</td>
+	
+	<% if usuario_corrente?(micropost.usuario) %>
+		<td><%= link_to "excluir", micropost, :method => :delete, :confirm=> "Tem certeza?" %></td>
+	<% end %>
+</tr>

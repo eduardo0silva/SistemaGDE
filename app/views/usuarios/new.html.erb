@@ -1,0 +1,31 @@
+<h2>Cadastro</h2>
+<p><spam class="capitalizado">F</spam> &nbsp; aça o seu cadastro</p>
+<hr/>
+<% form_for(@usuario) do |f| %>
+	<%= f.error_messages %>
+	
+	<div class="campoTexto">
+		<%= f.label :nome %><br/>
+		<%= f.text_field :nome %>
+	</div>
+	
+	<div class="campoTexto">
+		<%= f.label :email %><br/>
+		<%= f.text_field :email %>
+	</div>
+	
+	<div class="campoTexto">
+		<%= f.label :senha %><br/>
+		<%= f.password_field :senha %>
+	</div>
+	
+	<div class="campoTexto">
+		<%= f.label :senha_confirmation, "Confirmação" %><br/>
+		<%= f.password_field :senha_confirmation %>
+	</div>
+	
+	<div class="actions">
+		<%= f.submit "Cadastrar" %>
+	</div>
+
+<% end %>
