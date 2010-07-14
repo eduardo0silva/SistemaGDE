@@ -20,13 +20,13 @@ class PagesController < ApplicationController
   end
   
   
-  def relatorio
+  def gerar_documento
     
-    @titulo = "Relat&oacute;rio"
+    @titulo = "Of&iacute;cio"
     @usuario = usuario_corrente
     @usuarios = Usuario.all()
 
-    report = ODFReport.new("#{RAILS_ROOT}/public/modelos/modelo1.odt") do |r|
+    report = ODFReport.new("#{RAILS_ROOT}/public/modelos/oficio.odt") do |r|
 
       r.add_field "USUARIO_NOME", @usuario.nome
     	r.add_field "USUARIO_EMAIL", @usuario.email
