@@ -2,11 +2,12 @@ require 'odf-report'
 
 
 class PagesController < ApplicationController
+
   
   def principal
     @titulo = "Projeto IMI"
     if usuario_logado?
-      @micropost = Micropost.new
+      @documento = Documento.new
       @feed = usuario_corrente.feed.paginate(:page => params[:page])
     end
   end
@@ -18,6 +19,7 @@ class PagesController < ApplicationController
   def sobre
     @titulo = "Sobre"
   end
+<<<<<<< HEAD
   
   
   def gerar_documento
@@ -59,5 +61,7 @@ class PagesController < ApplicationController
 
   end
   
+=======
+>>>>>>> documento
 
 end

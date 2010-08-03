@@ -1,13 +1,21 @@
-<% form_for @micropost do |f| %>
+<% form_for @documento do |d| %>
 
-	<%= f.error_messages %>
+	<%= d.error_messages %>
 
 	<div class="field">
-		<%= f.text_area :conteudo %>
+		<%= d.text_area :remetente %>
+	</div>
+	
+	<div class="field">
+		<%= d.text_area :assunto %>
+	</div>
+	
+	<div class="field">
+		<%= d.text_area :remetente %>
 	</div>
 	
 	<div class="acoes">
-		<%= f.submit "Enviar" %>
+		<%= d.submit "Enviar" %>
 	</div>
 
 <% end %>

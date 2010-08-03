@@ -1,0 +1,10 @@
+pt: 
+    time:
+        formats:
+            day_month_year: "%d/%m/%Y"
+            month_year: "%B de %Y"
+            month_names: %w[nil Janeiro Fevereiro Março Abril Maio Junho Julho Agosto Setembro Outubro Novembro Dezembro]
+    date:
+        abbr_day_names: %w[Dom Seg Ter Qua Qui Sex Sab]
+        abbr_month_names: %w[nil Jan Fev Mar Abr Mai Jun Jul Ago Set Out Nov Dez]
+        day_names: %w[Domingo Segunda Terça Quarta Quinta Sexta Sabado]

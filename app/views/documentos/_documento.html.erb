@@ -1,0 +1,11 @@
+<tr>
+	<td class="gravatar"><%= gravatar_for documento.usuario %></td>
+	<td class="micropost">
+		<span class="conteudo"> <%= h documento.assunto%></span>
+		<span class="tempo">Postado <%= documento.created_at.strftime("%d de %b de %Y") %>.</span>
+	</td>
+	
+	<% if usuario_corrente?(documento.usuario) %>
+		<td><%= link_to "excluir", documento, :method => :delete, :confirm=> "Tem certeza?" %></td>
+	<% end %>
+</tr>

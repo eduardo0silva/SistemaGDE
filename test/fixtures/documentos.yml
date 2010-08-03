@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  numero: 1
+  remetente: MyString
+  assunto: MyString
+  corpo: MyString
+  despedida: MyString
+  id_usuario: 1
+
+two:
+  numero: 1
+  remetente: MyString
+  assunto: MyString
+  corpo: MyString
+  despedida: MyString
+  id_usuario: 1

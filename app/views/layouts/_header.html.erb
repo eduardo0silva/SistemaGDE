@@ -8,6 +8,7 @@
 		<!--li><%= link_to "Contato", contato_url %></li-->
 		<% if usuario_logado? %>
 			<li><%= link_to "Usuarios", usuarios_path %></li>
+			<li><%= link_to "Documentos", documentos_path %></li>
 			<li><%= link_to "Sair", logout_path, :method => :delete %></li>
 			<li><%= link_to "Perfil", usuario_corrente %></li>
 			<li><%= link_to "Configura&ccedil;&atilde;o", edit_usuario_path(usuario_corrente)%></li>
