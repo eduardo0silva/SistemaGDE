@@ -4,7 +4,7 @@ class CreateDocumentos < ActiveRecord::Migration
       t.integer :numero
       t.string :destinatario
       t.string :assunto
-      t.string :corpo
+      t.text :corpo
       t.string :despedida
       t.string :remetente
       t.integer :usuario_id
