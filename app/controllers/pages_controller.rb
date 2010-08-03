@@ -19,7 +19,6 @@ class PagesController < ApplicationController
   def sobre
     @titulo = "Sobre"
   end
-<<<<<<< HEAD
   
   
   def gerar_documento
@@ -60,8 +59,5 @@ class PagesController < ApplicationController
     send_file(report_file_name) 
 
   end
-  
-=======
->>>>>>> documento
 
 end

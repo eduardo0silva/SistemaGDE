@@ -10,11 +10,8 @@ ActionController::Routing::Routes.draw do |map|
   map.contato '/contato', :controller => 'pages', :action => 'contato'
   map.sobre   '/sobre',   :controller => 'pages', :action => 'sobre'
   map.cadastro '/cadastro', :controller => 'usuarios', :action => 'new'
-<<<<<<< HEAD
   map.relatorio '/gerar_documento', :controller => 'pages', :action => 'gerar_documento'
-=======
   map.gerardocumento 'documentos/:id/gerar_documento', :controller => 'documentos', :action => 'gerar_documento'
->>>>>>> documento
   
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
