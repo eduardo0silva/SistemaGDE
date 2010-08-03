@@ -1,9 +1,13 @@
-Projeto de Introdução à Micro-Informática
-
 Sistema de Gerenciamento de Documentos Eletrônicos
-
-Página do Projeto:
-
-	http://sistemagde.heroku.com
 	
+	A facilidade de criar documentos proporcionada pela tecnologia criou um grande crescimento no número de documentos. Aliado a isso a falta de acessibilidade dos documentos em diferentes formatos proprietários causada por softwares proprietários, falta de software gratuito que possa gerenciar documentos eletrônicos e o descarte de arquivo por inacessibilidade gerou a motivação de desenvolver o SistemaGDE.
 	
+	O Sistema GDE(Gerenciamento de Documentos Eletrônicos) utilizará apenas documentos eletrônicos com formatos abertos. O seu código fonte estará disponível para qualquer pessoa interessada. Será utilizado via web e possuirá uma interface acessível para deficientes visuais.
+
+	Página do Projeto:
+
+		http://sistemagde.heroku.com
+
+	Código fonte do projeto:
+	
+	 	http://github.com/eduardobodao/SistemaGDE
