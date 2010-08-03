@@ -19,45 +19,5 @@ class PagesController < ApplicationController
   def sobre
     @titulo = "Sobre"
   end
-  
-  
-  def gerar_documento
-    
-    @titulo = "Of&iacute;cio"
-    @usuario = usuario_corrente
-    @usuarios = Usuario.all()
-
-    report = ODFReport.new("#{RAILS_ROOT}/public/modelos/oficio.odt") do |r|
-
-      r.add_field "USUARIO_NOME", @usuario.nome
-    	r.add_field "USUARIO_EMAIL", @usuario.email
-
-      r.add_table("USUARIOS", @usuarios) do | row, us |
-        row["TABELA_NOME"] = "#{us.nome} (#{us.email})"
-      end
-
-      r.add_table("USUARIOS", @usuarios) do | row, field |
-
-        #if field.is_a?(String)
-          row["FIELD_NOME"] = field.nome
-          row["FIELD_EMAIL"] = field.email
-          row["FIELD_CRIADO"] = field.created_at.strftime("%d/%m/%Y - %H:%M")
-          row["FIELD_ATUALIZADO"] = field.updated_at.strftime("%d/%m/%Y - %H:%M")
-        #else
-         # row["FIELD_NOME"] = field.nome
-        #  row["FIELD_EMAIL"] = field.email || ''
-        #end
-        
-        r.add_image :graphics1, "public/images/unb.jpg"
-
-      end
-
-    end
-
-    report_file_name = report.generate
-
-    send_file(report_file_name) 
-
-  end
 
 end

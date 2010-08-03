@@ -6,18 +6,18 @@
 				<%= h @usuario.nome %>
 			</h2>
 			
-			<% unless @usuario.microposts.empty? %>
+			<% unless @usuario.documentos.empty? %>
 				<table class="microposts">
-					<%= render @microposts %>
+					<%= render @documentos %>
 				</table>
-				<%= will_paginate @microposts %>
+				<%= will_paginate @documentos %>
 			<% end %>
 		</td>
 		
 		<td class="sidebar round">
 			<strong>Nome</strong> <%= @usuario.nome %><br />
 			<strong>URL</strong> <%= link_to usuario_path(@usuario), usuario_path(@usuario) %>
-			<strong>Posts</strong> <%= @usuario.microposts.count %>
+			<strong>Documentos</strong> <%= @usuario.documentos.count %>
 		</td>
 	</tr>
 </table>

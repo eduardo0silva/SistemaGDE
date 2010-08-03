@@ -5,7 +5,7 @@ class UsuariosController < ApplicationController
   
   def show
     @usuario = Usuario.find(params[:id])
-    @microposts = @usuario.microposts.paginate(:page => params[:page])
+    @documentos = @usuario.documentos.paginate(:page => params[:page])
     @titulo = CGI.escapeHTML(@usuario.nome)
   end
   
