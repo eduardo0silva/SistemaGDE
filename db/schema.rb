@@ -9,7 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100510165357) do
+ActiveRecord::Schema.define(:version => 20100714043519) do
+
+  create_table "documentos", :force => true do |t|
+    t.integer  "numero"
+    t.string   "destinatario"
+    t.string   "assunto"
+    t.string   "corpo"
+    t.string   "despedida"
+    t.string   "remetente"
+    t.integer  "usuario_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "microposts", :force => true do |t|
     t.string   "conteudo"

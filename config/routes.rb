@@ -1,6 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  
   # The priority is based upon order of creation: first created -> highest priority.
   map.resources :usuarios
+  map.resources :documentos
   map.resources :sessions, :only => [:new, :create, :destroy]
   map.resources :microposts, :only => [:create, :destroy]
   map.login '/login', :controller => 'sessions', :action => 'new'
@@ -8,7 +10,7 @@ ActionController::Routing::Routes.draw do |map|
   map.contato '/contato', :controller => 'pages', :action => 'contato'
   map.sobre   '/sobre',   :controller => 'pages', :action => 'sobre'
   map.cadastro '/cadastro', :controller => 'usuarios', :action => 'new'
-  map.relatorio '/relatorio', :controller => 'pages', :action => 'relatorio'
+  map.gerardocumento 'documentos/:id/gerar_documento', :controller => 'documentos', :action => 'gerar_documento'
   
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'

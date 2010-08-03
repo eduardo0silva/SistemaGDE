@@ -21,6 +21,7 @@ class Usuario < ActiveRecord::Base
   attr_accessible :nome, :email, :senha, :senha_confirmation
   
   has_many :microposts, :dependent => :destroy
+  has_many :documentos
   
   EmailRegex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
@@ -53,7 +54,7 @@ class Usuario < ActiveRecord::Base
   
   #Implementacado preliminar. Cap 12 implementacao completa.
   def feed
-    Micropost.all(:conditions => ["usuario_id = ?", id])
+    Documento.all(:conditions => ["usuario_id = ?", id])
   end
   
   private
