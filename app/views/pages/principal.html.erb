@@ -1,16 +1,16 @@
 <% if usuario_logado? %>
-	<table class="frente">
-		<tr>
-			<td class="main">
+	<div class="frente">
+		
+			<spam class="sidebar round">
+				<%= render 'pages/usuario_info' %>
+			</spam>
+		
+			<spam class="main">
 				<h2 class="micropost">Documentos Recentes</h2>
 				<%= render 'pages/feed'%>
 
-			</td>
-			<td class="sidebar round">
-				<%= render 'pages/usuario_info' %>
-			</td>
-		</tr>
-	</table>
+			</spam>
+	</div>
 <% else %>
 <h1>P&aacute;gina Principal</h1>
 <p>

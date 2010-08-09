@@ -1,11 +1,9 @@
-require 'odf-report'
-
 
 class PagesController < ApplicationController
 
   
   def principal
-    @titulo = "Projeto IMI"
+    @titulo = "Principal"
     if usuario_logado?
       @documento = Documento.new
       @feed = usuario_corrente.feed.paginate(:page => params[:page])

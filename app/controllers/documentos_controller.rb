@@ -4,6 +4,7 @@ class DocumentosController < ApplicationController
   # GET /documentos
   # GET /documentos.xml
   def index
+    @titulo = "Lista de Documentos"
     @documentos = usuario_corrente.documentos
 
     respond_to do |format|
@@ -17,6 +18,7 @@ class DocumentosController < ApplicationController
   def show
     @usuario = usuario_corrente
     @documento = Documento.find(params[:id])
+    @titulo = @documento.assunto
 
     respond_to do |format|
       format.html # show.html.erb
@@ -27,6 +29,7 @@ class DocumentosController < ApplicationController
   # GET /documentos/new
   # GET /documentos/new.xml
   def new
+    @titulo = "Novo Documento"
     @documento = Documento.new
     @documento.usuario_id = usuario_corrente.id
     @usuario = usuario_corrente
@@ -39,6 +42,7 @@ class DocumentosController < ApplicationController
 
   # GET /documentos/1/edit
   def edit
+    @titulo = "Editando Documento"
     @documento = Documento.find(params[:id])
   end
 
@@ -92,7 +96,6 @@ class DocumentosController < ApplicationController
   
   
   def gerar_documento
-    
     @documento = Documento.find(params[:id])
     @usuario = usuario_corrente
     @usuarios = Usuario.all()

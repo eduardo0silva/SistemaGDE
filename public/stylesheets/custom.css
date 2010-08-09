@@ -26,12 +26,12 @@ body {
 /* Links */
 
 a {
-  color: #666;
+  color: #000;
   text-decoration: none;
 }
 
 a:hover {
-  color: #669;
+  color: #eee;
   text-decoration: underline;
 }
 
@@ -112,22 +112,23 @@ a.signup_button {
 
 /*página que exibe o usuario*/
 
-table.profile{
+div.profile{
 	width: 100%;
 	margin-bottom: 0;
 }
 
-td.main{
+div.main{
 	width: 70%;
 	padding: 1em;
 }
 
-td.sidebar{
+span.sidebar{
 	width: 30%;
-	padding: 1em;
+	padding: 10px;
+	margin: 10px;
 	vertical-align: top;
-	background: #a22;
-	color: #3a3;
+	background: #ccc;
+	color: #fff;
 }
 
 td.sidebar a{
@@ -204,11 +205,11 @@ h2.micropost {
   margin-bottom: 0;
 }
 
-table.microposts tr {
+span.microposts tr {
   height: 70px;
 }
 
-table.microposts tr td.gravatar {
+div.microposts tr td.gravatar {
   border-top: 1px solid #ccc;
   vertical-align: top;
   width: 50px;
