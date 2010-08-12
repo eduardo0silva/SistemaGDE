@@ -1,6 +1,7 @@
+<br>
 <% unless @feed.empty? %>
-  <table class="microposts">
+  <div>
     <%= render @feed %>
-  </table>
+  </div>
   <%= will_paginate @feed %>
 <% end %>

@@ -1,10 +1,19 @@
 .container {
-  width: 80%;
+	width: 80%;
 	text-align: justify;
 }
 
 body {
   background: #eee;
+}
+
+div.main{
+	width:70%;
+}
+
+span{
+	-moz-border-radius:    10px;
+	-webkit-border-radius: 10px;
 }
 
 #header {
@@ -31,7 +40,7 @@ a {
 }
 
 a:hover {
-  color: #eee;
+  color: #444;
   text-decoration: underline;
 }
 
@@ -112,32 +121,50 @@ a.signup_button {
 
 /*página que exibe o usuario*/
 
+div.usuario_info{
+	border: 1px solid #000;
+	width: 30%;
+}
+
+div.frente div.main{
+	width:70%;
+}
+
 div.profile{
 	width: 100%;
 	margin-bottom: 0;
 }
 
 div.main{
-	width: 70%;
+	width: 80%;
 	padding: 1em;
 }
 
-span.sidebar{
-	width: 30%;
+div.sidebar{
+	width: 20%;
+	float: right;
 	padding: 10px;
-	margin: 10px;
+	margin: 15px;
 	vertical-align: top;
 	background: #ccc;
-	color: #fff;
+	color: #f00;
+	-moz-border-radius:    10px;
+	-webkit-border-radius: 10px;
 }
 
-td.sidebar a{
-	color: #ddd;
+
+div.sidebar a{
+	color: #f60;
 }
 
-.profile img.gravatar{
-	border: 1px solid #000;
-	margin-bottom: -15px;
+div.gravatar{
+	float: left;
+	margin: 5px;
+}
+
+.documentos img.gravatar{
+	margin-bottom: 5px;
+	vertical-align: bottom;
 }
 
 
@@ -146,11 +173,23 @@ div.campoTexto, div.actions {
 	margin-bottom: 10px;
 }
 
+input{
+	-moz-border-radius:    5px;
+	-webkit-border-radius: 5px;
+}
+
+textarea{
+	-moz-border-radius:    5px;
+	-webkit-border-radius: 5px;
+}
+
 /*erros do formulario*/
 .fieldWithErrors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+	padding: 2px;
+	background-color: red;
+	display: table;
+	-moz-border-radius:    6px;
+	-webkit-border-radius: 6px;
 }
 
 .fieldWithErrors label {
@@ -164,6 +203,8 @@ div.campoTexto, div.actions {
   padding-bottom: 12px;
   margin-bottom: 20px;
   background-color: #f0f0f0;
+  -moz-border-radius:    5px;
+  -webkit-border-radius: 5px;
 }
 
 #errorExplanation h2 {
@@ -226,22 +267,6 @@ table.microposts tr td.micropost span.tempo {
   color: #666;
 }
 
-div.usuario_info img {
-  padding-right: 0.1em;
-}
-
-div.usuario_info a {
-  text-decoration: none;
-}
-
-div.usuario_info span.user_name {
-  position: absolute;
-}
-
-div.usuario_info span.microposts {
-  font-size: 80%;
-}
-
 form.new_micropost {
   margin-bottom: 2em;
 }
@@ -249,4 +274,59 @@ form.new_micropost {
 form.new_micropost textarea {
   height: 4em;
   margin-bottom: 0;
+}
+
+
+/* Usuarios */
+
+div.usuario_info{
+	width: 100%;
+}
+
+div.usuario_info img {
+	padding-right: 0.1em;
+	float:left;
+}
+
+div.usuario_info a {
+  text-decoration: none;
+}
+
+div.usuario_info div.usuario_nome {
+
+}
+
+div.usuario_info div.usuario_docs {
+  font-size: 80%;
+	text-align:right;
+}
+
+
+
+/* Documentos */
+
+div.documentos{
+	border: 1px solid #000;
+	-moz-border-radius:    10px;
+	-webkit-border-radius: 10px;
+	height: 95px;
+	width: 100%;
+}
+
+div.assunto{
+	float: left;
+	width:90%;
+	text-align: right;
+}
+
+div.tempo{
+	float: left;
+	width: 90%;
+	text-align:right;
+}
+
+div.deletar_documento a{
+	margin: 10px;
+	color: #f00;
+	float: right;
 }

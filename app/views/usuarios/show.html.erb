@@ -7,14 +7,14 @@
 			</h2>
 			
 			<% unless @usuario.documentos.empty? %>
-				<table class="microposts">
+				<table class="documentos">
 					<%= render @documentos %>
 				</table>
 				<%= will_paginate @documentos %>
 			<% end %>
 		</td>
 		
-		<td class="sidebar round">
+		<td class="sidebar">
 			<strong>Nome</strong> <%= @usuario.nome %><br />
 			<strong>URL</strong> <%= link_to usuario_path(@usuario), usuario_path(@usuario) %>
 			<strong>Documentos</strong> <%= @usuario.documentos.count %>
