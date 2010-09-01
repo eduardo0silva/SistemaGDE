@@ -3,6 +3,7 @@ tmp/*
 tmp/**/*
 doc/api
 doc/app
+doc/*.jude
 db/*.sqlite3
 *.swp
 *~

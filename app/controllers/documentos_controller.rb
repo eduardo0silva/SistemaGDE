@@ -107,31 +107,12 @@ class DocumentosController < ApplicationController
     	r.add_field "DOCUMENTO_NUMERO", @documento.numero
     	r.add_field "DOCUMENTO_DESTINATARIO", @documento.destinatario
     	r.add_field "DOCUMENTO_REMETENTE", @documento.remetente
-    	r.add_field "DOCUMENTO_DATA", @documento.created_at
+    	r.add_field "DOCUMENTO_DATA", @documento.created_at.strftime("%d/%mm/%YY")
     	r.add_field "DOCUMENTO_ASSUNTO", @documento.assunto
       r.add_field "DOCUMENTO_CORPO", @documento.corpo
       r.add_field "DOCUMENTO_DESPEDIDA", @documento.despedida
       
-      
-      r.add_table("USUARIOS", @usuarios) do | row, us |
-        row["TABELA_NOME"] = "#{us.nome} (#{us.email})"
-      end
-
-      r.add_table("USUARIOS", @usuarios) do | row, field |
-
-        #if field.is_a?(String)
-          row["FIELD_NOME"] = field.nome
-          row["FIELD_EMAIL"] = field.email
-          row["FIELD_CRIADO"] = field.created_at.strftime("%d/%m/%Y - %H:%M")
-          row["FIELD_ATUALIZADO"] = field.updated_at.strftime("%d/%m/%Y - %H:%M")
-        #else
-         # row["FIELD_NOME"] = field.nome
-        #  row["FIELD_EMAIL"] = field.email || ''
-        #end
-        
-        r.add_image :graphics1, "public/images/unb.jpg"
-
-      end
+      r.add_image :graphics1, "public/images/unb.jpg"
 
     end
 
@@ -141,5 +122,29 @@ class DocumentosController < ApplicationController
 
   end
   
+  def lista_usuarios
+    @usuario = usuario_corrente
+    @usuarios = Usuario.all()
+
+    report = ODFReport.new("#{RAILS_ROOT}/public/modelos/lista_de_usuarios.odt") do |r|
+    
+      r.add_table("USUARIOS", @usuarios) do | row, us |
+        row["TABELA_NOME"] = "#{us.nome} (#{us.email})"
+      end
+
+      r.add_table("USUARIOS", @usuarios) do | row, us |
+        row["FIELD_NOME"] = us.nome
+        row["FIELD_EMAIL"] = us.email
+        row["FIELD_CRIADO"] = us.created_at.strftime("%d/%m/%Y - %H:%M")
+        row["FIELD_ATUALIZADO"] = us.updated_at.strftime("%d/%m/%Y - %H:%M")
+      end
+    
+    end
+
+    report_file_name = report.generate
+
+    send_file(report_file_name)
+    
+  end
   
 end

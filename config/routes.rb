@@ -8,9 +8,9 @@ ActionController::Routing::Routes.draw do |map|
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.contato '/contato', :controller => 'pages', :action => 'contato'
-  map.sobre   '/sobre',   :controller => 'pages', :action => 'sobre'
+  map.sobre '/sobre',   :controller => 'pages', :action => 'sobre'
   map.cadastro '/cadastro', :controller => 'usuarios', :action => 'new'
-  map.relatorio '/gerar_documento', :controller => 'pages', :action => 'gerar_documento'
+  map.lista_usuarios '/lista_usuarios', :controller => 'documentos', :action => 'lista_usuarios'
   map.gerardocumento 'documentos/:id/gerar_documento', :controller => 'documentos', :action => 'gerar_documento'
   
   # Sample of regular route:

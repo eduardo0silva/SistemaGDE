@@ -2,7 +2,7 @@ module ApplicationHelper
 
   # Retorna um titulo em cada pagina.
   def titulo
-    base_titulo = "Projeto de IMI"
+    base_titulo = "Penna"
     if @titulo.nil?
       base_titulo
     else
@@ -11,7 +11,7 @@ module ApplicationHelper
   end
   
   def logo
-    image_tag("unb.jpg", :alt => "Projeto IMI", :class => "round")
+    image_tag("penna_logo.jpg", :alt => "Projeto Penna", :class => "round")
   end
   
 end
