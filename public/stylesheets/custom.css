@@ -10,14 +10,12 @@ body {
 div.main{
 	width:70%;
 }
-
-span{
-	-moz-border-radius:    10px;
-	-webkit-border-radius: 10px;
-}
+	
 
 #header {
-  padding-top: 20px;
+	padding-top: 20px;
+	background-image: url("/images/header_back.png");
+	background-repeat: no-repeat;
 }
 
 #header img {
@@ -25,11 +23,17 @@ span{
   background: #fff;
 }
 
+#publicidade{
+	float: right;
+}
+
 #content {
-  margin-top: 1em;
-  font-size: 120%;
-  padding: 20px;
-  background: #fff;
+	margin-top: 1em;
+	font-size: 120%;
+	padding: 20px;
+	background: #fff;	
+	-moz-border-radius:    7px;
+	-webkit-border-radius: 7px;
 }
 
 /* Links */
@@ -53,6 +57,8 @@ a:visited {
 
 .navigation {
   float: right;
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
 }
 
 .navigation {
@@ -62,14 +68,19 @@ a:visited {
 }
 
 ul.navigation {
-  margin: 0;
+	margin: 0;
+	list-style: inline;
 }
 
-.navigation li {
-  list-style-type: none;
-  display: inline-block;
-  padding: 0.2em 0;
+
+ul.navigation li {
+	position: relative;
+	list-style-type: none;
+	display: inline;
+	padding: 0.2em 0;
 }
+
+/*
 
 .navigation li a {
   padding: 0 5px;
@@ -84,6 +95,41 @@ ul.navigation {
   text-decoration: underline;
 }
 
+.navigation li:hover ul { 
+	display: inline; 
+}
+
+
+
+/*SubMenu nagecacao*/
+
+.navigation li ul{
+	position: absolute;
+	left: -50px;
+}
+
+
+
+.navigation ul li{
+	display: none;
+	top: 5px;
+
+}
+
+.navigation ul li a{/*formatacao dos itens de submenu*/
+	display: block;
+	text-decoration: none;
+	color: #777;
+	background: #fff;
+	padding: 3px;
+	border: 1px solid #333;
+	-moz-border-radius:    5px;
+	-webkit-border-radius: 5px;
+}
+
+.navigation li:hover ul li{/* essa regra que faz o submenu aparecer*/
+	display: block; 
+}
 
 /* Sign up button */
 
@@ -101,11 +147,11 @@ a.signup_button {
 }
 
 
-/* cantos arredondados */
+/* logotipo */
 
-.round {
-  -moz-border-radius:    10px;
-  -webkit-border-radius: 10px;
+.logo {
+  -moz-border-radius:    4px;
+  -webkit-border-radius: 4px;
 }
 
 /*rodape*/
@@ -254,6 +300,22 @@ div.microposts tr td.gravatar {
   border-top: 1px solid #ccc;
   vertical-align: top;
   width: 50px;
+}
+
+
+/*Tabelas*/
+table th{
+	background-color: #666;
+	color: #fff;
+	padding-left: 20px;
+	-moz-border-radius:    4px;
+	-webkit-border-radius: 4px;
+}
+table td{
+	background-color: #eee;
+	color: #666;
+	-moz-border-radius:    4px;
+	-webkit-border-radius: 4px;
 }
 
 table.microposts tr td.micropost {

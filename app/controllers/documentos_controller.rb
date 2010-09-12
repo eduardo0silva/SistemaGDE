@@ -93,8 +93,7 @@ class DocumentosController < ApplicationController
     end
   end
   
-  
-  
+  #Gera o documento que esta sendo visualizado/editado 
   def gerar_documento
     @documento = Documento.find(params[:id])
     @usuario = usuario_corrente
@@ -122,6 +121,8 @@ class DocumentosController < ApplicationController
 
   end
   
+  
+  #Gera relacao com lista de usuarios em odf
   def lista_usuarios
     @usuario = usuario_corrente
     @usuarios = Usuario.all()
@@ -146,5 +147,12 @@ class DocumentosController < ApplicationController
     send_file(report_file_name)
     
   end
+  
+  
+  #metodo de busca dinamica em ajax
+  def busca_index
+   @documentos = Documento.find(:all, :conditions => ["documento LIKE ?","%#{params[:busca]}%"])
+  end
+  
   
 end

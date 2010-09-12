@@ -11,7 +11,7 @@ module ApplicationHelper
   end
   
   def logo
-    image_tag("penna_logo.jpg", :alt => "Projeto Penna", :class => "round")
+    image_tag("penna_logo.jpg", :alt => "Projeto Penna", :class => "logo")
   end
   
 end
