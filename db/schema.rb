@@ -15,13 +15,22 @@ ActiveRecord::Schema.define(:version => 20100714043519) do
     t.integer  "numero"
     t.string   "destinatario"
     t.string   "assunto"
-    t.string   "corpo"
+    t.text     "corpo"
     t.string   "despedida"
     t.string   "remetente"
     t.integer  "usuario_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "microposts", :force => true do |t|
+    t.string   "conteudo"
+    t.integer  "usuario_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "microposts", ["usuario_id"], :name => "index_microposts_on_usuario_id"
 
   create_table "usuarios", :force => true do |t|
     t.string   "nome"
