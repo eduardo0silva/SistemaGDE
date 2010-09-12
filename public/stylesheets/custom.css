@@ -387,7 +387,7 @@ div.tempo{
 	text-align:right;
 }
 
-div.deletar_documento a{
+div.editar_documento a{
 	margin: 10px;
 	color: #f00;
 	float: right;
