@@ -18,7 +18,7 @@ class UsuariosController < ApplicationController
     @usuario = Usuario.new(params[:usuario])
     if @usuario.save
       usuario_logado @usuario
-      flash[:success] = "Bem vindo ao Projeto do IMI"
+      flash[:success] = "Bem vindo ao Projeto Penna"
       redirect_to @usuario
     else
       @titulo = "Cadastro"

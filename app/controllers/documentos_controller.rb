@@ -111,7 +111,7 @@ class DocumentosController < ApplicationController
       r.add_field "DOCUMENTO_CORPO", @documento.corpo
       r.add_field "DOCUMENTO_DESPEDIDA", @documento.despedida
       
-      r.add_image :graphics1, "public/images/unb.jpg"
+      r.add_image :graphics1, "public/images/penna_logo.jpg"
 
     end
 
